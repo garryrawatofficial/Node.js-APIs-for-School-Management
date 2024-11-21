@@ -1,0 +1,49 @@
+
+{
+    "info": {
+        "name": "School Management API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Add School",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"Green Valley School\",\n    \"address\": \"123 Main St\",\n    \"latitude\": 40.7128,\n    \"longitude\": -74.0060\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:3000/addSchool",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["addSchool"]
+                }
+            }
+        },
+        {
+            "name": "List Schools",
+            "request": {
+                "method": "GET",
+                "url": {
+                    "raw": "http://localhost:3000/listSchools?latitude=40.730610&longitude=-73.935242",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "3000",
+                    "path": ["listSchools"],
+                    "query": [
+                        {"key": "latitude", "value": "40.730610"},
+                        {"key": "longitude", "value": "-73.935242"}
+                    ]
+                }
+            }
+        }
+    ]
+}
